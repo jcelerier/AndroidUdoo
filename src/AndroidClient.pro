@@ -22,22 +22,23 @@ HEADERS += \
 
 #### Libraries ####
   ##  Oscpack  ##
+linux-g++ {
 unix:!macx: LIBS += -L$$PWD/../../git/oscpack/build/ -loscpack
 
 INCLUDEPATH += $$PWD/../../git/oscpack/src
 DEPENDPATH += $$PWD/../../git/oscpack/src
 
 unix:!macx: PRE_TARGETDEPS += $$PWD/../../git/oscpack/build/liboscpack.a
-
+}
 
 
 android-g++|android-clang {
-unix:!macx: LIBS += -L$$PWD/../../stage/soft/androidBuilds/oscpack/libs/armeabi-v7a/ -loscpack
+unix:!macx: LIBS += -L$$PWD/../../../stage/soft/androidBuilds/oscpack/libs/armeabi-v7a/ -loscpack
 
-INCLUDEPATH += $$PWD/../../stage/soft/androidBuilds/oscpack/src
-DEPENDPATH += $$PWD/../../stage/soft/androidBuilds/oscpack/src
+INCLUDEPATH += $$PWD/../../../stage/soft/androidBuilds/oscpack/src
+DEPENDPATH += $$PWD/../../../stage/soft/androidBuilds/oscpack/src
 
-unix:!macx: PRE_TARGETDEPS += $$PWD/../../stage/soft/androidBuilds/oscpack/libs/armeabi-v7a/liboscpack.a
+unix:!macx: PRE_TARGETDEPS += $$PWD/../../../stage/soft/androidBuilds/oscpack/libs/armeabi-v7a/liboscpack.a
 
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android

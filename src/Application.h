@@ -27,7 +27,7 @@ class Application : public QObject
 		{ m_currentSlot = arg; }
 
 	private:
-		OscSender sender{"147.210.110.82", 9988};
+		OscSender sender{"192.170.0.1", 9988};
 		int m_currentSlot{};
 };
 
